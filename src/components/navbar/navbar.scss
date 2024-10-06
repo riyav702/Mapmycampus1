@@ -1,0 +1,74 @@
+@import "../../responsive.scss";
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    align-items: center;
+
+    a {
+        transition: all 0.4s ease;
+
+        // Hide all links on small screens
+        @include sm {
+            display: none; 
+        }
+
+        &:hover {
+            transform: scale(1.05); // Use transform for scaling
+        }
+    }
+
+    .left {
+        flex: 3;
+        display: flex;
+        align-items: center;
+        gap: 50px;
+
+        .logo {
+            font-weight: bold;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            img {
+                width: 28px;
+            }
+
+            // Control visibility of span based on screen size
+            span {
+                // Hide span on medium and small screens
+                @include md {
+                    display: none; 
+                }
+                @include sm {
+                    display: none; 
+                }
+            }
+        }
+    }
+
+    .right {
+        flex: 2;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        background-color: #fcf5f3;
+        height: 100%;
+
+        a {
+            padding: 12px 24px;
+            margin: 20px;
+
+            // Adjust margins for smaller screens if needed
+            @include sm {
+                margin: 10px; // Adjust for smaller screens
+            }
+        }
+
+        .register {
+            background-color: #fece51; // Ensure this line ends with a semicolon
+        }
+    }
+}
